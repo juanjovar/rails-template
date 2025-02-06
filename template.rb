@@ -1,11 +1,6 @@
 # Gemfile
-gem_group :development, :test do
-  gem 'rspec-rails', '~> 6.0'
-  gem 'capybara'
-  gem 'selenium-webdriver'
-  gem 'faker'
-  gem 'factory_bot_rails'
-end
+# Encuentra el bloque group :development, :test do y añade las gemas justo antes de su 'end'
+gsub_file 'Gemfile', /(group :development, :test do\n(?:.*\n)*end\n)/m, "\\1  gem 'rspec-rails', '~> 7.1.0'\n  gem 'capybara'\n  gem 'selenium-webdriver'\n  gem 'faker'\n  gem 'factory_bot_rails'\n"
 
 # Instala las gemas
 run 'bundle install'
